@@ -1,0 +1,14 @@
+{
+  "version": "3",
+  "remote": {
+    "https://deno.land/std@0.207.0/assert/assert.ts": "9a97dad6d98c238938e7540736b826440ad8c1c1e54430ca4c4e623e585607ee",
+    "https://deno.land/std@0.207.0/assert/assertion_error.ts": "4d0bde9b374dfbcbe8ac23f54f567b77024fb67dbb1906a852d67fe050d42f56",
+    "https://deno.land/std@0.207.0/cli/parse_args.ts": "9bea02050b3f302e706871ff87ecfa3ad82cc34249adbe0dcddfaac75bdb48ff",
+    "https://deno.land/std@0.207.0/dotenv/mod.ts": "039468f5c87d39b69d7ca6c3d68ebca82f206ec0ff5e011d48205eea292ea5a6",
+    "https://deno.land/std@0.207.0/flags/mod.ts": "567a34800a33e701942cb1726dd7e627a76e4681c33ce7346ac85cf90f691a8e",
+    "https://deno.land/x/youtube@v0.3.0/mod.ts": "7c0cd5a77f5ecb2ddabc5335945ec8ab8e84d1a6e790e42fe3e9879b9ed19861",
+    "https://deno.land/x/youtube@v0.3.0/src/oauth.ts": "229083c9da9de796a77921332dadf278c2b4f1680b626555389b6589acb08ea7",
+    "https://deno.land/x/youtube@v0.3.0/src/schemas.ts": "3cfbbe5198974ad15c84b4f07b0f294dc8f4fe35c32ff3c204ca9fcefe08732f",
+    "https://deno.land/x/youtube@v0.3.0/src/youtube-deno.ts": "353569abfbe30476117b638cd763e896b67fca336d78d5e9f0903757f2d4b77b"
+  }
+}
