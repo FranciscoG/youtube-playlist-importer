@@ -3,7 +3,8 @@
     "std/": "https://deno.land/std@0.207.0/"
   },
   "tasks": {
-    "run": "deno run --allow-net=www.googleapis.com,deno.land --allow-read=. main.ts"
+    "run": "deno run --allow-net=googleapis.com,deno.land --allow-read=. --allow-env=YoutubeClientId,YoutubeApiKey,AccessToken main.ts",
+    "compile": "deno compile --allow-net=googleapis.com,deno.land --allow-read=. --allow-env=YoutubeClientId,YoutubeApiKey,AccessToken main.ts --output=yt-playlist-import"
   },
   "fmt": {
     "useTabs": true,

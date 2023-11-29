@@ -8,6 +8,10 @@ Please read and follow the instructions in the following 2 sections of their doc
 
 - ["Objects that require user interactions (user consent by OAuth 2.0 authorization"](https://github.com/akshgpt7/youtube-deno#objects-that-require-user-interactions-user-consent-by-oauth-20-authorization)
 
+## IMPORTANT NOTE
+
+The text file with the youtube urls must be in the same folder as the `yt-import-playlist` executable
+
 The simplest way to run this is:
 
 ```
@@ -32,6 +36,10 @@ YoutubeApiKey=your_api_key
 AccessToken=your_access_token
 ```
 
+## Development
+
+Requires [deno](https://docs.deno.com/runtime/manual/getting_started/installation)
+
 ```
-deno task run -n example_imported -f example.txt
+deno task run -n example_imported2 -f example.txt
 ```
