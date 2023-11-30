@@ -18,6 +18,8 @@ interface Args {
   c?: string;
   t?: string;
   token?: string;
+  p?: string;
+  playlistId?: string;
 }
 const args: Args = parseArgs(Deno.args);
 
@@ -28,11 +30,12 @@ Youtube Playlist Importer
 If you omit any of the REQUIRED flags you will be prompted to enter them manually
 
 usage: yt-playlist-import [-n PlaylistName] [-f MyFileName.txt] [-k apiKey] [-c clientId] [-t access_token]
-	-f, --file     : REQUIRED name of file to import, must be a UTF-8 encoded text file with urls separated by newlines or commas or spaces
-  -k, --apiKey   : REQUIRED YouTube API key
-  -c, --clientId : REQUIRED YouTube OAuth2 client id
-  -t, --token    : YouTube OAuth2 access token, if missing you will need to click on the OAuth link and grab the access token from the url after you authenticate
-  -n, --name     : optionally set the name of the playlist, if missing it will use the name of the file (replacing hyphens or underscores with spaces)
+	-f, --file       : REQUIRED name of file to import, must be a UTF-8 encoded text file with urls separated by newlines or commas or spaces
+  -k, --apiKey     : REQUIRED YouTube API key
+  -c, --clientId   : REQUIRED YouTube OAuth2 client id
+  -t, --token      : YouTube OAuth2 access token, if missing you will need to click on the OAuth link and grab the access token from the url after you authenticate
+  -n, --name       : optionally set the name of the playlist, if missing it will use the name of the file (replacing hyphens or underscores with spaces)
+  -p, --playlistId : optionally set the playlist id, if missing it will create a new playlist
 
 You can optionally set client id, api key, and access token in an .env file:
   YoutubeClientId=your_client_id
@@ -49,6 +52,7 @@ let fileName: string | null = args.file || args.f || null;
 let apiKey: string | null = env['YoutubeApiKey'] || args.apiKey || args.k || null;
 let clientId: string | null = env['YoutubeClientId'] || args.clientId || args.c || null;
 const accessToken: string | null = env['AccessToken'] || args.token || args.t || null;
+const playlistId: string | null = args.p || args.playlistId || null;
 
 /***************************************************
  * Prompt user for any missing required arguments
@@ -122,7 +126,11 @@ const playlist = new ImportPlaylist(
   accessToken,
 );
 
-await playlist.createPlaylist();
+if (!playlistId) {
+  await playlist.createPlaylist();
+} else {
+  playlist.playlistId = playlistId;
+}
 
 // songs will be inserted one at a time in succession. larger lists will take longer
 await playlist.insertVideosIntoPlaylist();
