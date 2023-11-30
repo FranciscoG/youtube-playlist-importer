@@ -12,10 +12,12 @@ Please read and follow the instructions in the following 2 sections of their doc
 
 The text file with the youtube urls must be in the same folder as the `yt-import-playlist` executable
 
+## How to use it
+
 The simplest way to run this is:
 
 ```
-yt-playlist-import
+./yt-playlist-import
 ```
 
 From there it will prompt you for any required information.
@@ -23,7 +25,7 @@ From there it will prompt you for any required information.
 You can also provide everything via cli flags, run this for more information:
 
 ```
-yt-playlist-import --help
+./yt-playlist-import --help
 ```
 
 ## Environment File
