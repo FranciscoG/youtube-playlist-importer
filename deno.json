@@ -7,8 +7,8 @@
     "compile": "deno compile --allow-net=googleapis.com,deno.land --allow-read=. --allow-env=YoutubeClientId,YoutubeApiKey,AccessToken main.ts --output=yt-playlist-import"
   },
   "fmt": {
-    "useTabs": true,
-    "lineWidth": 80,
+    "useTabs": false,
+    "lineWidth": 100,
     "indentWidth": 2,
     "semiColons": true,
     "singleQuote": true,
