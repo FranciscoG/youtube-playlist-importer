@@ -250,8 +250,7 @@ export class ImportPlaylist {
     }
 
     // all videos have been processed
-    logger.log('');
-    logger.log(`Finished adding videos to playlist`);
+    logger.log(`\nFinished adding videos to playlist`);
     if (this.videosSkipped.length > 0) {
       logger.warn(
         `The following ${this.videosSkipped.length} videos were skipped:`,
@@ -261,9 +260,10 @@ export class ImportPlaylist {
       }
     }
   }
+}
 
-  static isGoodYoutubeUrl(url: string): boolean {
-    const regex = /https:\/\/www\.youtube\.com\/watch\?v=[a-zA-Z0-9_-]+/;
-    return regex.test(url);
-  }
+export function isGoodYoutubeUrl(url: string): boolean {
+  if (!url) return false;
+  const regex = /https:\/\/www\.youtube\.com\/watch\?v=[a-zA-Z0-9_-]+/;
+  return regex.test(url);
 }

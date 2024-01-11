@@ -1,7 +1,7 @@
 import { load } from 'std/dotenv/mod.ts';
-import { ImportPlaylist } from './yt.ts';
-import { logger } from './logger.js';
-import { args } from './cli.ts';
+import { ImportPlaylist, isGoodYoutubeUrl } from './src/yt.ts';
+import { logger } from './src/logger.js';
+import { args } from './src/cli.ts';
 const env = await load();
 
 let playlistName: string | null = args.name || args.n || null;
@@ -68,7 +68,7 @@ const videoList = file
   .trim()
   .split(/[\n,\s]/)
   .map((line) => line.trim())
-  .filter((line) => line !== '' && ImportPlaylist.isGoodYoutubeUrl(line));
+  .filter(isGoodYoutubeUrl);
 
 if (videoList.length === 0) {
   logger.error(`No videos urls found in ${fileName}`);
