@@ -1,6 +1,6 @@
 # Youtube Playlist Importer
 
-This code uses the [youtube-deno](https://github.com/akshgpt7/youtube-deno) library.
+Add many YouTube videos to a playlist at once via a CLI.
 
 Please read and follow the instructions in the following 2 sections of their documentation:
 
@@ -10,7 +10,7 @@ Please read and follow the instructions in the following 2 sections of their doc
 
 ## IMPORTANT NOTE
 
-The text file with the youtube urls must be in the same folder as the `yt-import-playlist` executable
+The text file with the youtube urls must be in the same folder, or subfolder, as the `yt-import-playlist` executable
 
 ## How to use it
 
@@ -46,4 +46,4 @@ Requires [deno](https://docs.deno.com/runtime/manual/getting_started/installatio
 deno task run -n example_imported2 -f example.txt
 ```
 
-test
+This code uses the [youtube-deno](https://github.com/akshgpt7/youtube-deno) library.
